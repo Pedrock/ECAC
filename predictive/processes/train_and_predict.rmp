@@ -101,10 +101,10 @@
         </process>
       </operator>
       <operator activated="false" class="retrieve" compatibility="8.0.001" expanded="true" height="68" name="Retrieve train_data" width="90" x="246" y="136">
-        <parameter key="repository_entry" value="../predictive/data/train_data"/>
+        <parameter key="repository_entry" value="../data/train_data"/>
       </operator>
       <operator activated="false" class="retrieve" compatibility="8.0.001" expanded="true" height="68" name="Retrieve test_data" width="90" x="514" y="238">
-        <parameter key="repository_entry" value="../predictive/data/test_data"/>
+        <parameter key="repository_entry" value="../data/test_data"/>
       </operator>
       <operator activated="true" class="concurrency:cross_validation" compatibility="8.0.001" expanded="true" height="145" name="Cross Validation" width="90" x="380" y="34">
         <parameter key="split_on_batch_attribute" value="false"/>
