@@ -32,6 +32,9 @@
         <parameter key="datamanagement" value="double_array"/>
         <parameter key="data_management" value="auto"/>
       </operator>
+      <operator activated="true" class="store" compatibility="8.0.001" expanded="true" height="68" name="Store" width="90" x="246" y="136">
+        <parameter key="repository_entry" value="../data/data"/>
+      </operator>
       <operator activated="true" class="set_role" compatibility="8.0.001" expanded="true" height="82" name="Set Role" width="90" x="313" y="34">
         <parameter key="attribute_name" value="client_id"/>
         <parameter key="target_role" value="id"/>
@@ -146,7 +149,11 @@
         <list key="application_parameters"/>
         <parameter key="create_view" value="false"/>
       </operator>
-      <connect from_op="Read Database" from_port="output" to_op="Set Role" to_port="example set input"/>
+      <operator activated="false" class="retrieve" compatibility="8.0.001" expanded="true" height="68" name="Retrieve data" width="90" x="112" y="136">
+        <parameter key="repository_entry" value="../data/data"/>
+      </operator>
+      <connect from_op="Read Database" from_port="output" to_op="Store" to_port="input"/>
+      <connect from_op="Store" from_port="through" to_op="Set Role" to_port="example set input"/>
       <connect from_op="Set Role" from_port="example set output" to_op="Replace Missing Values" to_port="example set input"/>
       <connect from_op="Replace Missing Values" from_port="example set output" to_op="Select Attributes" to_port="example set input"/>
       <connect from_op="Select Attributes" from_port="example set output" to_op="Nominal to Numerical" to_port="example set input"/>
